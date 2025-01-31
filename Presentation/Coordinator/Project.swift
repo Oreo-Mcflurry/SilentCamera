@@ -13,5 +13,6 @@ let project = Project.dynamicFramework(
     dependencies: [
         .domain(target: .UseCases),
         .presentation(target: .Router),
+        .presentation(target: .Camera)
     ]
 )

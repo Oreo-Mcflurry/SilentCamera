@@ -20,19 +20,28 @@ extension Project {
       bundleId: AppConstants.bundleId,
       deploymentTargets: AppConstants.deploymentTargets,
       infoPlist: .extendingDefault(with: [
-        "UILaunchScreen": "LaunchScreen"
+          "UILaunchScreen": "LaunchScreen",
+          "NSCameraUsageDescription": "The app requires access to the camera to capture photos.",
+          "NSPhotoLibraryUsageDescription": "The app needs access to your photo library to display and save photos.",
+          "NSPhotoLibraryAddUsageDescription": "The app requires permission to add photos to your library."
       ]),
       sources: ["Sources/**"],
       resources: ["Resources/**"],
       dependencies: dependencies,
-      settings: .settings()
-//          .settings(
-//        configurations: [
-//          .configuration(environment: .dev),
-//          .configuration(environment: .prod),
-//        ]
-//      )
-      ,
+      settings: .settings(
+        configurations: [
+            .debug(name: "Debug", settings: [
+                "CODE_SIGN_STYLE": "Automatic",
+                "DEVELOPMENT_TEAM": "\(PrivateKey.teamID)",
+                "CODE_SIGN_IDENTITY": "Apple Development"
+            ]),
+            .release(name: "Release", settings: [
+                "CODE_SIGN_STYLE": "Automatic",
+                "DEVELOPMENT_TEAM": "\(PrivateKey.teamID)",
+                "CODE_SIGN_IDENTITY": "Apple Development"
+            ])
+        ]
+    ),
       environmentVariables: [:],
       additionalFiles: []
     )
