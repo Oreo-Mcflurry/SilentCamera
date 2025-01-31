@@ -1,12 +1,18 @@
+//
+//  ContentView.swift
+//  ContentView
+//
+//  Created by A_Mcflurry on 1/31/25.
+//
+
 import SwiftUI
 import Router
 import Coordinator
 
-public struct ContentView: View {
-    public init() {}
-    
+struct ContentView: View {
     @StateObject private var router = Router()
-    public var body: some View {
+    
+    var body: some View {
         NavigationStack(path: $router.path) {
             Button {
                 router.push(to: .cameraView)
