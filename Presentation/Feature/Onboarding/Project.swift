@@ -9,10 +9,11 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.staticLibrary(
-  name: Modules.Presentation.Onboarding.rawValue,
-  dependencies: [
-    .domain(target: .UseCases),
-    .presentation(target: .DesignSystem),
-    .presentation(target: .Router),
-  ]
+    name: Modules.Presentation.Onboarding.rawValue,
+    dependencies: [
+        .domain(target: .UseCases),
+        .presentation(target: .DesignSystem),
+        .presentation(target: .Router),
+        .utility(target: .Extension),
+    ]
 )
