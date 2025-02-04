@@ -7,7 +7,7 @@
 
 import Combine
 
-extension Publisher {
+public extension Publisher {
     func sink<Object: AnyObject>(
         with obj: Object,
         receiveCompletion: @escaping (Object, Failure) -> Void,

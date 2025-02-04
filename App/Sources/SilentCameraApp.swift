@@ -7,12 +7,13 @@
 
 
 import SwiftUI
+import Inital
 
 @main
 struct SilentCameraApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            InitalView()
         }
     }
 }

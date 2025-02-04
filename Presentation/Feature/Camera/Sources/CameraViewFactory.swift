@@ -8,7 +8,7 @@
 import SwiftUI
 import UseCases
 
-public struct CameraViewFactory {
+public final class CameraViewFactory {
     @ViewBuilder
     public static func createCameraView() -> some View {
         CameraView()

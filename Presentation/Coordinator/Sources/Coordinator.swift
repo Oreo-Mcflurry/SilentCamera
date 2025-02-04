@@ -8,6 +8,7 @@
 import SwiftUICore
 import Router
 import Camera
+import Onboarding
 import UseCases
 
 public struct Coordinator {
@@ -16,6 +17,11 @@ public struct Coordinator {
         switch route {
         case .cameraView:
             CameraViewFactory.createCameraView()
+            
+        case .onboardingView:
+            let useCase: OnboardingViewUseCases = UserCasesFactory.createOnboardingViewUseCase()
+            OnboardingViewFactory.createOnboardingView(useCase)
+
         }
     }
 }

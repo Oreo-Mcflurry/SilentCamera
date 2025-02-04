@@ -9,4 +9,6 @@ import Foundation
 
 public enum Route: Hashable {
     case cameraView
+    case onboardingView
+    case initalView
 }
